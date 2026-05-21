@@ -388,6 +388,62 @@
     @media (max-width:768px) { .skills-grid { grid-template-columns: 1fr 1fr; } }
     @media (max-width:420px) { .skills-grid { grid-template-columns: 1fr; } }
 
+    /* AWARDS GRID */
+    .awards-grid {
+      display: grid; grid-template-columns: repeat(3,1fr);
+      gap: 1rem; margin-top: 1.75rem;
+    }
+    .award-tile {
+      background: #fffbeb;
+      border: 1px solid #fcd34d;
+      border-radius: 10px;
+      padding: 1.25rem 1rem 1rem;
+      display: flex; flex-direction: column; align-items: flex-start;
+      gap: .5rem;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .award-tile:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(217,119,6,.15);
+    }
+    .award-icon {
+      font-size: 1.3rem; line-height: 1;
+      margin-bottom: .1rem;
+    }
+    .award-label {
+      font-size: .62rem; font-weight: 700;
+      letter-spacing: .14em; text-transform: uppercase;
+      color: #b45309;
+    }
+    .award-text {
+      font-size: .8rem; font-weight: 500;
+      color: #1c1208; line-height: 1.45;
+    }
+    .exp-stat-bar {
+      display: flex; align-items: center; gap: 1.25rem;
+      background: linear-gradient(135deg, var(--p800), var(--p600));
+      border-radius: 10px; padding: 1rem 1.5rem;
+      margin-top: 1rem; flex-wrap: wrap;
+    }
+    .exp-stat {
+      display: flex; flex-direction: column; gap: .15rem;
+    }
+    .exp-stat-num {
+      font-size: 1.5rem; font-weight: 800;
+      color: white; letter-spacing: -.02em; line-height: 1;
+    }
+    .exp-stat-label {
+      font-size: .65rem; font-weight: 500;
+      letter-spacing: .08em; text-transform: uppercase;
+      color: rgba(255,255,255,.65);
+    }
+    .exp-stat-divider {
+      width: 1px; height: 2.5rem;
+      background: rgba(255,255,255,.2); flex-shrink: 0;
+    }
+    @media (max-width:768px) { .awards-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width:480px) { .awards-grid { grid-template-columns: 1fr; } .exp-stat-bar { flex-direction: column; align-items: flex-start; } .exp-stat-divider { display: none; } }
+
     /* TESTIMONIALS */
     .testi-bg { background: var(--p900); }
     .testi-bg .wrap { padding-bottom: 5rem; }
@@ -531,10 +587,9 @@
 
 <!-- HERO -->
 <header class="hero">
-  <div class="h-badge"><span class="dot"></span> Senior Strategic Advisor <span class="dot-sep">●</span> Team Lead</div>
+  <div class="h-badge"><span class="dot"></span> Senior Strategic Advisor <span class="dot-sep">●</span> Team Lead <span class="dot-sep">●</span> Property Investment Specialist</div>
   <h1 class="h-name">Sarah<br><em>Boyle.</em></h1>
-  <p class="h-sub">Team Lead, Dashdot &nbsp;·&nbsp; Property Investment Specialist</p>
-  <p class="h-tagline">High-ticket consultative sales, client advisory and portfolio strategy. Built on real performance, real conviction, and real results.</p>
+  <p class="h-tagline">Most advisors sell property strategy. I live it — three investments in and still buying. That changes every conversation I have with a client.</p>
   <div class="h-contacts">
     <a class="h-contact" href="tel:0478063525"><span class="ic">◉</span> 0478 063 525</a>
     <a class="h-contact" href="mailto:sasullivan03@outlook.com"><span class="ic">◉</span> sasullivan03@outlook.com</a>
@@ -572,7 +627,7 @@
 <div class="manifesto">
   <div class="manifesto-inner">
     <p class="s-label rev">Why Sarah</p>
-    <h2 class="s-title rev" style="margin-bottom:2rem">The difference is conviction.</h2>
+    <h2 class="s-title rev" style="margin-bottom:2rem">I put my money where my mouth is.</h2>
     <div class="m-lines">
       <p class="m-line rev">I hold the company record for most strategy sessions in a month, most new clients in a quarter, and <strong>highest revenue generated weekly, monthly and quarterly.</strong> Those aren't targets I hit. They're records I set.</p>
       <p class="m-line rev" style="transition-delay:.1s">I personally own <strong>3 investment properties.</strong> When I sit across from a client, I'm not selling a concept. I'm sharing a conviction I back with my own money.</p>
@@ -596,13 +651,61 @@
         </div>
         <div class="exp-date">June 2025 – Present</div>
       </div>
-      <p class="exp-desc">Team leader and senior strategy advisor in a high-performance buyers agency, owning discovery and strategy calls, driving pipeline conversion, and elevating the broader advisor team.</p>
-      <div class="exp-hits">
-        <div class="exp-hit">Consistently exceeded KPI with a <strong>40%+ monthly close rate</strong> on high-ticket advisory packages ($21K–$64K)</div>
-        <div class="exp-hit">Ranked <strong>top performer</strong> across multiple revenue and conversion metrics company-wide</div>
-        <div class="exp-hit">Holds company records: most strategy sessions in a month, most new clients in a quarter, most properties sold in a week, and <strong>highest weekly, monthly &amp; quarterly revenue</strong></div>
-        <div class="exp-hit">Promoted to Senior Strategic Advisor (Team Lead), recognition of consistent high performance and leadership</div>
-        <div class="exp-hit">Mentors and develops the broader advisor team, driving team-wide conversion improvements</div>
+      <p class="exp-desc">Top-performing senior advisor and team lead at Dashdot, one of Australia's leading property investment buyers agencies. Owns the full client journey from first discovery call through to onboarding, closing high-ticket advisory packages at $21K–$64K with a 40%+ monthly close rate. Simultaneously leads, mentors and develops the broader advisor team — without sacrificing individual output.</p>
+
+      <div class="exp-stat-bar">
+        <div class="exp-stat">
+          <div class="exp-stat-num">40%+</div>
+          <div class="exp-stat-label">Monthly Close Rate</div>
+        </div>
+        <div class="exp-stat-divider"></div>
+        <div class="exp-stat">
+          <div class="exp-stat-num">$64K</div>
+          <div class="exp-stat-label">Max Package Value</div>
+        </div>
+        <div class="exp-stat-divider"></div>
+        <div class="exp-stat">
+          <div class="exp-stat-num">#1</div>
+          <div class="exp-stat-label">Company-wide Ranking</div>
+        </div>
+        <div class="exp-stat-divider"></div>
+        <div class="exp-stat">
+          <div class="exp-stat-num">10+</div>
+          <div class="exp-stat-label">Repeat Clients</div>
+        </div>
+      </div>
+
+      <div class="awards-grid">
+        <div class="award-tile">
+          <div class="award-icon">★</div>
+          <div class="award-label">Company Record</div>
+          <div class="award-text">Most strategy sessions conducted in a single month</div>
+        </div>
+        <div class="award-tile">
+          <div class="award-icon">★</div>
+          <div class="award-label">Company Record</div>
+          <div class="award-text">Most new clients acquired in a single quarter</div>
+        </div>
+        <div class="award-tile">
+          <div class="award-icon">★</div>
+          <div class="award-label">Company Record</div>
+          <div class="award-text">Most properties sold in a single week</div>
+        </div>
+        <div class="award-tile">
+          <div class="award-icon">★</div>
+          <div class="award-label">Company Record</div>
+          <div class="award-text">Highest weekly, monthly &amp; quarterly revenue generated</div>
+        </div>
+        <div class="award-tile">
+          <div class="award-icon">🏆</div>
+          <div class="award-label">Top Performer</div>
+          <div class="award-text">Ranked #1 across all revenue &amp; conversion metrics company-wide</div>
+        </div>
+        <div class="award-tile">
+          <div class="award-icon">↑</div>
+          <div class="award-label">Promoted</div>
+          <div class="award-text">Elevated to Team Lead in recognition of performance and leadership impact</div>
+        </div>
       </div>
     </div>
 
