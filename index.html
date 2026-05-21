@@ -6,7 +6,7 @@
   <title>Sarah Boyle, Senior Strategic Advisor</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -161,7 +161,7 @@
       background: var(--p100); color: var(--p700);
       font-size: .75rem; font-weight: 600;
       padding: .4rem 1rem; border-radius: 50px;
-      margin-bottom: 2rem;
+      margin-bottom: 2rem; align-self: flex-start;
       opacity: 0; animation: fadeUp .7s ease .1s forwards;
     }
     .h-badge .dot {
@@ -273,25 +273,22 @@
       background: white;
     }
     .manifesto-inner { max-width: 1100px; margin: 0 auto; }
-    .m-lines { display: grid; grid-template-columns: 1fr 1fr; gap: .65rem; }
+    .m-lines { display: flex; flex-direction: column; gap: .5rem; }
     .m-line {
-      font-size: clamp(.86rem,1.3vw,.95rem);
-      font-weight: 400; line-height: 1.7;
-      color: var(--text); padding: 1.4rem 1.6rem;
-      border-radius: 14px; border: 1px solid var(--p100);
+      font-size: clamp(.88rem,1.4vw,1rem);
+      font-weight: 400; line-height: 1.65;
+      color: var(--text); padding: 1.1rem 1.4rem;
+      border-radius: 10px; border: 1px solid var(--p100);
       background: var(--p50);
-      opacity: 0; transform: translateY(16px);
+      opacity: 0; transform: translateX(-16px);
       transition: opacity .55s ease, transform .55s ease;
     }
-    .m-line.in { opacity: 1; transform: translateY(0); }
+    .m-line.in { opacity: 1; transform: translateX(0); }
     .m-line strong { color: var(--p700); font-weight: 700; }
-    .m-line .m-stat { display: block; font-size: clamp(1.6rem,3vw,2.2rem); font-weight: 800; color: var(--p700); letter-spacing: -.02em; line-height: 1.1; margin-bottom: .5rem; }
-    .m-line:nth-child(1) { background: linear-gradient(135deg, var(--p900), var(--p700)); color: rgba(255,255,255,.9); border: none; grid-column: span 2; }
-    .m-line:nth-child(1) strong { color: var(--p300); }
-    .m-line:nth-child(2) { background: white; border-color: var(--p200); }
-    .m-line:nth-child(3) { background: var(--p100); border-color: var(--p200); }
-    .m-line:nth-child(4) { background: white; border-color: var(--p200); }
-    @media (max-width:680px) { .m-lines { grid-template-columns: 1fr; } .m-line:nth-child(1) { grid-column: span 1; } }
+    .m-line:nth-child(2) { background: var(--p100); border-color: var(--p200); }
+    .m-line:nth-child(3) { background: white; border-color: var(--p200); }
+    .m-line:nth-child(4) { background: linear-gradient(135deg, var(--p800), var(--p600)); color: rgba(255,255,255,.92); border: none; }
+    .m-line:nth-child(4) strong { color: var(--p300); }
 
     /* SECTION CHROME */
     .wrap { max-width: 1100px; margin: 0 auto; padding: 5rem clamp(1.5rem,8vw,7rem); }
@@ -403,11 +400,26 @@
       background: linear-gradient(to top, var(--p800), var(--p400));
       transition: opacity .2s;
     }
-    .rev-bar.holiday { background: linear-gradient(to top, #9ca3af, #d1d5db); }
+    .rev-bar.holiday { background: linear-gradient(to top, var(--p800), var(--p400)); }
     .rev-bar-wrap:hover .rev-bar { opacity:.75; }
     .rev-bar-month { font-size:.58rem; font-weight:600; color:var(--muted); text-transform:uppercase; }
     .rev-bar-amt { font-size:.58rem; font-weight:700; color:var(--p700); }
-    .rev-bar.holiday + .rev-bar-month { color:#9ca3af; }
+    .rev-bars { overflow: visible; }
+    .holiday-wrap { position: relative; }
+    .holiday-anno {
+      position: absolute; bottom: calc(100% + 4px); left: 50%;
+      transform: translateX(-65%);
+      display: flex; flex-direction: column; align-items: center;
+      pointer-events: none; width: 105px;
+    }
+    .holiday-note {
+      font-family: 'Caveat', cursive;
+      font-size: 1rem; font-weight: 700;
+      color: var(--p700); text-align: center;
+      line-height: 1.2; transform: rotate(-4deg);
+      white-space: nowrap;
+    }
+    .holiday-arrow-svg { width: 22px; height: 30px; margin-top: 1px; }
 
     /* REVENUE TOGGLE */
     .rev-toggle {
@@ -605,22 +617,23 @@
 
     /* HERO PHOTO */
     .h-name-row {
-      display: flex; align-items: center; gap: 1.75rem;
+      display: flex; align-items: flex-end; gap: 2rem;
       margin-bottom: 1.5rem;
     }
     .hero-photo {
       flex-shrink: 0;
-      width: clamp(80px, 9vw, 120px); height: clamp(80px, 9vw, 120px);
+      width: clamp(120px, 11vw, 160px); height: clamp(120px, 11vw, 160px);
       border-radius: 50%; overflow: hidden;
-      border: 3px solid var(--p200);
-      box-shadow: 0 6px 32px rgba(109,40,217,.18);
+      border: none;
+      box-shadow: 0 8px 40px rgba(109,40,217,.15);
       position: relative; z-index: 1;
+      margin-bottom: .5rem;
       opacity: 0; animation: fadeIn .9s ease .45s forwards;
     }
-    .hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center center; }
+    .hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 15%; }
     @media (max-width: 768px) {
-      .h-name-row { gap: 1rem; }
-      .hero-photo { width: 64px; height: 64px; }
+      .h-name-row { gap: 1.25rem; align-items: flex-end; }
+      .hero-photo { width: 80px; height: 80px; }
     }
 
     /* COVER LETTER BUTTON */
@@ -803,18 +816,12 @@
 <div class="manifesto">
   <div class="manifesto-inner">
     <p class="s-label rev">Why Sarah</p>
-    <h2 class="s-title rev" style="margin-bottom:1.5rem">Property isn't just my job.<br>It's what I believe in.</h2>
+    <h2 class="s-title rev" style="margin-bottom:1.5rem">Built on belief.</h2>
     <div class="m-lines">
-      <p class="m-line rev">I got into property long before I got into sales. My first investment changed how I thought about wealth, and I've been obsessed with the strategy behind it ever since. The structures, the compounding, the long game. When you speak to me, <strong>you're speaking to someone who is building the same thing alongside you</strong>, with their own money, on the same timeline.</p>
-      <p class="m-line rev" style="transition-delay:.1s">
-        <span class="m-stat">5 Properties</span>
-        I personally own <strong>5 investment properties</strong> across residential, co-living, and trust-structured vehicles. Every structure I recommend to a client is one I've navigated myself. That's not a talking point. That's lived experience.</p>
-      <p class="m-line rev" style="transition-delay:.15s">
-        <span class="m-stat">$3.5M · 43%+</span>
-        <strong>$3.5M generated in 9 months.</strong> 43%+ close rate across packages from $21K to $64K. 6 company records. The results come from one place: genuinely understanding property well enough that clients feel the difference.</p>
-      <p class="m-line rev" style="transition-delay:.2s">
-        <span class="m-stat">10+ Returns</span>
-        More than <strong>10 clients came back for a second investment</strong> within months of their first. That's not a conversion metric. That's a trust metric. It's what happens when the advice is real and the strategy actually delivers.</p>
+      <p class="m-line rev">Property got under my skin long before it became my career. My first investment changed how I thought about wealth, and I've been fascinated by the strategy ever since. The structures, the timing, the compounding. <strong>I was already obsessed before anyone paid me to be.</strong></p>
+      <p class="m-line rev" style="transition-delay:.1s">I personally own <strong>5 investment properties</strong> across residential, co-living, and trust-held structures. Every path I walk a client through is one I've already walked myself. That's not a selling point. It's just the truth.</p>
+      <p class="m-line rev" style="transition-delay:.2s">What keeps me in this field isn't the numbers. It's the moment a client sees their future clearly for the first time. <strong>Helping people build something real that grows over time.</strong> That's the part I can't imagine walking away from.</p>
+      <p class="m-line rev" style="transition-delay:.3s">The strategy, the long game, the compounding. Those aren't just things I talk about. <strong>They're what I'm building in my own life.</strong> That's why I care so much about getting it right for the people I work with.</p>
     </div>
   </div>
 </div>
@@ -888,7 +895,18 @@
             <div class="rev-bar-wrap"><div class="rev-bar" style="height:80px"></div><div class="rev-bar-month">Dec</div><div class="rev-bar-amt">$574K</div></div>
             <div class="rev-bar-wrap"><div class="rev-bar" style="height:46px"></div><div class="rev-bar-month">Jan</div><div class="rev-bar-amt">$382K</div></div>
             <div class="rev-bar-wrap"><div class="rev-bar" style="height:43px"></div><div class="rev-bar-month">Feb</div><div class="rev-bar-amt">$357K</div></div>
-            <div class="rev-bar-wrap"><div class="rev-bar holiday" style="height:22px"></div><div class="rev-bar-month">Mar</div><div class="rev-bar-amt" style="color:#9ca3af">$179K</div></div>
+            <div class="rev-bar-wrap holiday-wrap">
+              <div class="holiday-anno">
+                <span class="holiday-note">I was on a beach 🌴<br>not my fault</span>
+                <svg class="holiday-arrow-svg" viewBox="0 0 22 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11 2 C10 8, 13 13, 11 20 C10 24, 9 26, 8 29" stroke="#7c3aed" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+                  <path d="M8 29 L4 22 M8 29 L13 23" stroke="#7c3aed" stroke-width="2.2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="rev-bar holiday" style="height:22px"></div>
+              <div class="rev-bar-month">Mar</div>
+              <div class="rev-bar-amt">$179K</div>
+            </div>
             <div class="rev-bar-wrap"><div class="rev-bar" style="height:45px"></div><div class="rev-bar-month">Apr</div><div class="rev-bar-amt">$371K</div></div>
             <div class="rev-bar-wrap"><div class="rev-bar" style="height:29px"></div><div class="rev-bar-month">May</div><div class="rev-bar-amt">$238K</div></div>
           </div>
