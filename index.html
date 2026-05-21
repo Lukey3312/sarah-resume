@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sarah Boyle — Senior Strategic Advisor</title>
+  <title>Sarah Boyle, Senior Strategic Advisor</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
@@ -166,10 +166,10 @@
     }
     .h-badge .dot {
       width: 7px; height: 7px; border-radius: 50%;
-      background: var(--p500);
+      background: var(--p700);
     }
     .dot-sep {
-      color: var(--p400); font-size: 1rem;
+      color: var(--p700); font-size: 1rem;
       margin: 0 .25rem; line-height: 1;
     }
     .h-sub {
@@ -236,34 +236,36 @@
       font-size: .7rem; font-weight: 700; letter-spacing: .22em;
       text-transform: uppercase; color: var(--p500); margin-bottom: 2rem;
     }
-    .metrics-grid {
+    .pillar-grid {
       display: grid; grid-template-columns: repeat(4,1fr); gap: 1.25rem;
     }
-    .m-card {
-      background: white; border-radius: 12px;
-      padding: 1.75rem 1.25rem; text-align: center;
+    .pillar {
+      background: white; border-radius: 14px;
+      padding: 1.75rem 1.5rem;
       border: 1px solid var(--p200);
       box-shadow: 0 2px 16px rgba(109,40,217,.06);
       transition: transform .25s, box-shadow .25s, border-color .25s;
+      display: flex; flex-direction: column; gap: .75rem;
     }
-    .m-card:hover {
+    .pillar:hover {
       transform: translateY(-3px);
       box-shadow: 0 8px 32px rgba(109,40,217,.14);
       border-color: var(--p300);
     }
-    .m-num {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: clamp(2.2rem,4vw,3.2rem);
-      font-weight: 800; line-height: 1; letter-spacing: -.02em;
-      background: linear-gradient(135deg, var(--p800) 0%, var(--p500) 100%);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      background-clip: text; margin-bottom: .5rem;
+    .pillar-icon {
+      font-size: 1.5rem;
+      color: var(--p600);
+      line-height: 1;
     }
-    .m-label {
-      font-size: .7rem; font-weight: 600;
-      letter-spacing: .08em; text-transform: uppercase; color: var(--muted);
+    .pillar-name {
+      font-size: 1rem; font-weight: 800;
+      color: var(--text); letter-spacing: -.01em; line-height: 1;
     }
-    @media (max-width:768px) { .metrics-grid { grid-template-columns: repeat(2,1fr); } }
+    .pillar-desc {
+      font-size: .78rem; color: var(--muted); line-height: 1.55;
+    }
+    @media (max-width:768px) { .pillar-grid { grid-template-columns: repeat(2,1fr); } }
+    @media (max-width:420px) { .pillar-grid { grid-template-columns: 1fr; } }
 
     /* MANIFESTO */
     .manifesto {
@@ -271,12 +273,12 @@
       background: white;
     }
     .manifesto-inner { max-width: 1100px; margin: 0 auto; }
-    .m-lines { display: flex; flex-direction: column; gap: .75rem; }
+    .m-lines { display: flex; flex-direction: column; gap: .5rem; }
     .m-line {
-      font-size: clamp(1.05rem,2vw,1.45rem);
-      font-weight: 400; line-height: 1.5;
-      color: var(--text); padding: 1.4rem 1.75rem;
-      border-radius: 10px; border: 1px solid var(--p100);
+      font-size: clamp(.88rem,1.4vw,1rem);
+      font-weight: 400; line-height: 1.6;
+      color: var(--text); padding: .9rem 1.25rem;
+      border-radius: 8px; border: 1px solid var(--p100);
       background: var(--p50);
       opacity: 0; transform: translateX(-16px);
       transition: opacity .55s ease, transform .55s ease;
@@ -388,6 +390,65 @@
     @media (max-width:768px) { .skills-grid { grid-template-columns: 1fr 1fr; } }
     @media (max-width:420px) { .skills-grid { grid-template-columns: 1fr; } }
 
+    /* REVENUE CHART */
+    .rev-chart { margin: .85rem 0 .25rem; }
+    .rev-chart-title { font-size:.65rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); margin-bottom:.85rem; }
+    .rev-bars { display:flex; align-items:flex-end; gap:.35rem; height:80px; }
+    .rev-bar-wrap { display:flex; flex-direction:column; align-items:center; gap:.3rem; flex:1; }
+    .rev-bar {
+      width:100%; border-radius:3px 3px 0 0;
+      background: linear-gradient(to top, var(--p800), var(--p400));
+      transition: opacity .2s;
+    }
+    .rev-bar.holiday { background: linear-gradient(to top, #9ca3af, #d1d5db); }
+    .rev-bar-wrap:hover .rev-bar { opacity:.75; }
+    .rev-bar-month { font-size:.58rem; font-weight:600; color:var(--muted); text-transform:uppercase; }
+    .rev-bar-amt { font-size:.58rem; font-weight:700; color:var(--p700); }
+    .rev-bar.holiday + .rev-bar-month { color:#9ca3af; }
+
+    /* REVENUE TOGGLE */
+    .rev-toggle {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 1rem; margin-top: 1.5rem;
+      padding: .9rem 1.25rem;
+      background: linear-gradient(135deg, var(--p100) 0%, var(--p50) 100%);
+      border: 1.5px solid var(--p300);
+      border-radius: 10px; cursor: pointer;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      width: 100%; text-align: left;
+      box-shadow: 0 2px 8px rgba(109,40,217,.08);
+      transition: background .2s, border-color .2s, box-shadow .2s;
+    }
+    .rev-toggle:hover {
+      background: var(--p100); border-color: var(--p400);
+      box-shadow: 0 4px 16px rgba(109,40,217,.16);
+    }
+    .rtog-left { display: flex; align-items: center; gap: .65rem; color: var(--p600); }
+    .rtog-label { display: flex; flex-direction: column; gap: .08rem; }
+    .rtog-title { font-size: .82rem; font-weight: 700; color: var(--p700); }
+    .rtog-sub { font-size: .68rem; font-weight: 500; color: var(--p500); }
+    .rtog-chevron { flex-shrink: 0; color: var(--p400); transition: transform .3s ease; }
+    .rev-toggle[aria-expanded="true"] .rtog-chevron { transform: rotate(180deg); }
+    .rev-panel {
+      overflow: hidden; max-height: 0; opacity: 0;
+      transition: max-height .45s cubic-bezier(.4,0,.2,1), opacity .3s ease;
+    }
+    .rev-panel.open { max-height: 220px; opacity: 1; }
+
+    /* SKILLS HONED */
+    .skills-honed { margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid var(--p100); }
+    .sh-label { font-size: .62rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--light); margin-bottom: .7rem; }
+    .sh-tags { display: flex; flex-wrap: wrap; gap: .45rem; }
+    .sh-tag {
+      display: inline-flex; align-items: center; gap: .38rem;
+      font-size: .75rem; font-weight: 500; color: var(--p700);
+      background: var(--p50); border: 1px solid var(--p200);
+      border-radius: 50px; padding: .28rem .75rem;
+      transition: background .2s, border-color .2s;
+    }
+    .sh-tag:hover { background: var(--p100); border-color: var(--p300); }
+    .sh-tag svg { color: var(--p400); flex-shrink: 0; }
+
     /* AWARDS GRID */
     .awards-grid {
       display: grid; grid-template-columns: repeat(3,1fr);
@@ -396,10 +457,10 @@
     .award-tile {
       background: #fffbeb;
       border: 1px solid #fcd34d;
-      border-radius: 10px;
-      padding: 1.25rem 1rem 1rem;
+      border-radius: 8px;
+      padding: .9rem .9rem .85rem;
       display: flex; flex-direction: column; align-items: flex-start;
-      gap: .5rem;
+      gap: .35rem;
       transition: transform .2s, box-shadow .2s;
     }
     .award-tile:hover {
@@ -407,17 +468,20 @@
       box-shadow: 0 6px 20px rgba(217,119,6,.15);
     }
     .award-icon {
-      font-size: 1.3rem; line-height: 1;
-      margin-bottom: .1rem;
+      font-size: 1rem; line-height: 1;
     }
     .award-label {
-      font-size: .62rem; font-weight: 700;
+      font-size: .58rem; font-weight: 700;
       letter-spacing: .14em; text-transform: uppercase;
       color: #b45309;
     }
+    .award-header {
+      font-size: .88rem; font-weight: 700;
+      color: #1c1208; line-height: 1.25;
+    }
     .award-text {
-      font-size: .8rem; font-weight: 500;
-      color: #1c1208; line-height: 1.45;
+      font-size: .72rem; font-weight: 400;
+      color: #78540a; line-height: 1.4;
     }
     .exp-stat-bar {
       display: flex; align-items: center; gap: 1.25rem;
@@ -589,7 +653,7 @@
 <header class="hero">
   <div class="h-badge"><span class="dot"></span> Senior Strategic Advisor <span class="dot-sep">●</span> Team Lead <span class="dot-sep">●</span> Property Investment Specialist</div>
   <h1 class="h-name">Sarah<br><em>Boyle.</em></h1>
-  <p class="h-tagline">Most advisors sell property strategy. I live it — three investments in and still buying. That changes every conversation I have with a client.</p>
+  <p class="h-tagline">I've been obsessed with property since I bought my first investment. The strategy, the compounding, the long game. That obsession is what's driven me to keep growing in sales, because the better I get at this, the more people I can actually help get there.</p>
   <div class="h-contacts">
     <a class="h-contact" href="tel:0478063525"><span class="ic">◉</span> 0478 063 525</a>
     <a class="h-contact" href="mailto:sasullivan03@outlook.com"><span class="ic">◉</span> sasullivan03@outlook.com</a>
@@ -598,26 +662,30 @@
   <div class="h-scroll"><span>Scroll</span><div class="scroll-line"></div></div>
 </header>
 
-<!-- METRICS -->
+<!-- PILLARS -->
 <div class="metrics-wrap rev">
   <div class="metrics-inner">
-    <p class="metrics-label">By the numbers</p>
-    <div class="metrics-grid">
-      <div class="m-card">
-        <div class="m-num" data-target="40" data-suffix="%+">0%</div>
-        <div class="m-label">Monthly Close Rate</div>
+    <p class="metrics-label">What I bring</p>
+    <div class="pillar-grid">
+      <div class="pillar">
+        <div class="pillar-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
+        <div class="pillar-name">Closer</div>
+        <div class="pillar-desc">40%+ monthly close rate on packages up to $64K, consistently, not occasionally.</div>
       </div>
-      <div class="m-card">
-        <div class="m-num" data-target="64" data-prefix="$" data-suffix="K">$0K</div>
-        <div class="m-label">Max Package Value</div>
+      <div class="pillar">
+        <div class="pillar-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+        <div class="pillar-name">Investor</div>
+        <div class="pillar-desc">5 properties owned personally. When I advise a client on strategy, I'm doing the same thing with my own money.</div>
       </div>
-      <div class="m-card">
-        <div class="m-num" data-target="5" data-suffix="+">0</div>
-        <div class="m-label">Sales Per Month</div>
+      <div class="pillar">
+        <div class="pillar-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <div class="pillar-name">Leader</div>
+        <div class="pillar-desc">Promoted to Team Lead while maintaining top individual output. I make the people around me better.</div>
       </div>
-      <div class="m-card">
-        <div class="m-num" data-target="3">0</div>
-        <div class="m-label">Personal Properties Owned</div>
+      <div class="pillar">
+        <div class="pillar-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg></div>
+        <div class="pillar-name">Strategist</div>
+        <div class="pillar-desc">Trusts, SMSFs, co-living, multi-property portfolios. I advise on structures most advisors can't explain.</div>
       </div>
     </div>
   </div>
@@ -627,12 +695,11 @@
 <div class="manifesto">
   <div class="manifesto-inner">
     <p class="s-label rev">Why Sarah</p>
-    <h2 class="s-title rev" style="margin-bottom:2rem">I put my money where my mouth is.</h2>
+    <h2 class="s-title rev" style="margin-bottom:2rem">What makes me tick.</h2>
     <div class="m-lines">
       <p class="m-line rev">I hold the company record for most strategy sessions in a month, most new clients in a quarter, and <strong>highest revenue generated weekly, monthly and quarterly.</strong> Those aren't targets I hit. They're records I set.</p>
-      <p class="m-line rev" style="transition-delay:.1s">I personally own <strong>3 investment properties.</strong> When I sit across from a client, I'm not selling a concept. I'm sharing a conviction I back with my own money.</p>
-      <p class="m-line rev" style="transition-delay:.2s">I was promoted to Team Lead because I don't just perform — <strong>I lift the people around me.</strong> My close rate stayed above 40% while building others up at the same time.</p>
-      <p class="m-line rev" style="transition-delay:.3s"><strong>10+ clients returned for a second investment within months.</strong> That's not a sales stat. That's a trust stat.</p>
+      <p class="m-line rev" style="transition-delay:.1s">I personally own <strong>5 investment properties.</strong> When I sit across from a client, I'm not selling a concept. I'm sharing a conviction I back with my own money.</p>
+      <p class="m-line rev" style="transition-delay:.2s">I was promoted to Team Lead because I don't just perform. <strong>I lift the people around me.</strong> My close rate stayed above 40% while building others up at the same time.</p>
     </div>
   </div>
 </div>
@@ -651,60 +718,105 @@
         </div>
         <div class="exp-date">June 2025 – Present</div>
       </div>
-      <p class="exp-desc">Top-performing senior advisor and team lead at Dashdot, one of Australia's leading property investment buyers agencies. Owns the full client journey from first discovery call through to onboarding, closing high-ticket advisory packages at $21K–$64K with a 40%+ monthly close rate. Simultaneously leads, mentors and develops the broader advisor team — without sacrificing individual output.</p>
+      <p class="exp-desc">Top-performing senior advisor and team lead at Dashdot, one of Australia's leading property investment buyers agencies. Generated $3.5M in revenue across 9 months, consistently closing at 43%+ on advisory packages from $21K to $64K, while simultaneously leading and developing the broader advisor team.</p>
+
+      <div class="exp-hits" style="margin-bottom:1.25rem">
+        <div class="exp-hit">$3.5M in revenue generated across 9 months, with a peak month of $574K in December</div>
+        <div class="exp-hit">Consistently 43%+ close rate on high-ticket advisory packages ranging from $21K to $64K</div>
+        <div class="exp-hit">Ranked #1 across revenue, conversion, and client acquisition metrics company-wide</div>
+        <div class="exp-hit">Promoted to Team Lead in recognition of consistent performance and natural leadership</div>
+        <div class="exp-hit">Mentors and upskills the broader advisor team without sacrificing individual output</div>
+        <div class="exp-hit">Advanced sales psychology and NEPQ-style questioning used to guide clients through high-stakes decisions</div>
+        <div class="exp-hit">Maintains active client relationships post-sale, re-engaging past clients for future investments</div>
+        <div class="exp-hit">Coordinates with brokers, accountants, and acquisitions to deliver a seamless client experience</div>
+      </div>
 
       <div class="exp-stat-bar">
         <div class="exp-stat">
-          <div class="exp-stat-num">40%+</div>
-          <div class="exp-stat-label">Monthly Close Rate</div>
+          <div class="exp-stat-num">$3.5M</div>
+          <div class="exp-stat-label">Revenue in 9 Months</div>
         </div>
         <div class="exp-stat-divider"></div>
         <div class="exp-stat">
-          <div class="exp-stat-num">$64K</div>
-          <div class="exp-stat-label">Max Package Value</div>
+          <div class="exp-stat-num">43%+</div>
+          <div class="exp-stat-label">Close Rate</div>
         </div>
         <div class="exp-stat-divider"></div>
         <div class="exp-stat">
-          <div class="exp-stat-num">#1</div>
-          <div class="exp-stat-label">Company-wide Ranking</div>
+          <div class="exp-stat-num">$1.4M</div>
+          <div class="exp-stat-label">Best Quarter</div>
         </div>
         <div class="exp-stat-divider"></div>
         <div class="exp-stat">
-          <div class="exp-stat-num">10+</div>
-          <div class="exp-stat-label">Repeat Clients</div>
+          <div class="exp-stat-num">6</div>
+          <div class="exp-stat-label">Company Records</div>
         </div>
       </div>
 
+      <button class="rev-toggle" aria-expanded="false" onclick="this.setAttribute('aria-expanded',this.getAttribute('aria-expanded')==='true'?'false':'true');this.nextElementSibling.classList.toggle('open')">
+        <span class="rtog-left">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="16" width="3" height="6"/><rect x="9" y="10" width="3" height="12"/><rect x="16" y="4" width="3" height="18"/></svg>
+          <span class="rtog-label">
+            <span class="rtog-title">Monthly Revenue Breakdown</span>
+            <span class="rtog-sub">Sep 2024 to May 2025 · 9 months · $3.5M total</span>
+          </span>
+        </span>
+        <svg class="rtog-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="rev-panel">
+        <div class="rev-chart">
+          <div class="rev-chart-title">Monthly Revenue</div>
+          <div class="rev-bars">
+            <div class="rev-bar-wrap"><div class="rev-bar" style="height:55px"></div><div class="rev-bar-month">Sep</div><div class="rev-bar-amt">$455K</div></div>
+            <div class="rev-bar-wrap"><div class="rev-bar" style="height:39px"></div><div class="rev-bar-month">Oct</div><div class="rev-bar-amt">$320K</div></div>
+            <div class="rev-bar-wrap"><div class="rev-bar" style="height:57px"></div><div class="rev-bar-month">Nov</div><div class="rev-bar-amt">$471K</div></div>
+            <div class="rev-bar-wrap"><div class="rev-bar" style="height:80px"></div><div class="rev-bar-month">Dec</div><div class="rev-bar-amt">$574K</div></div>
+            <div class="rev-bar-wrap"><div class="rev-bar" style="height:46px"></div><div class="rev-bar-month">Jan</div><div class="rev-bar-amt">$382K</div></div>
+            <div class="rev-bar-wrap"><div class="rev-bar" style="height:43px"></div><div class="rev-bar-month">Feb</div><div class="rev-bar-amt">$357K</div></div>
+            <div class="rev-bar-wrap"><div class="rev-bar holiday" style="height:22px"></div><div class="rev-bar-month">Mar</div><div class="rev-bar-amt" style="color:#9ca3af">$179K</div></div>
+            <div class="rev-bar-wrap"><div class="rev-bar" style="height:45px"></div><div class="rev-bar-month">Apr</div><div class="rev-bar-amt">$371K</div></div>
+            <div class="rev-bar-wrap"><div class="rev-bar" style="height:29px"></div><div class="rev-bar-month">May</div><div class="rev-bar-amt">$238K</div></div>
+          </div>
+        </div>
+      </div>
+
+      <p style="font-size:.68rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#b45309;margin-top:1.5rem;margin-bottom:.65rem;">Company Records</p>
       <div class="awards-grid">
         <div class="award-tile">
           <div class="award-icon">★</div>
           <div class="award-label">Company Record</div>
+          <div class="award-header">Most Strategy Sessions in a Month</div>
           <div class="award-text">Most strategy sessions conducted in a single month</div>
         </div>
         <div class="award-tile">
           <div class="award-icon">★</div>
           <div class="award-label">Company Record</div>
+          <div class="award-header">Most New Clients in a Quarter</div>
           <div class="award-text">Most new clients acquired in a single quarter</div>
         </div>
         <div class="award-tile">
           <div class="award-icon">★</div>
           <div class="award-label">Company Record</div>
+          <div class="award-header">Most Properties Sold in a Week</div>
           <div class="award-text">Most properties sold in a single week</div>
         </div>
         <div class="award-tile">
           <div class="award-icon">★</div>
           <div class="award-label">Company Record</div>
+          <div class="award-header">Highest Revenue Generated</div>
           <div class="award-text">Highest weekly, monthly &amp; quarterly revenue generated</div>
         </div>
         <div class="award-tile">
           <div class="award-icon">🏆</div>
           <div class="award-label">Top Performer</div>
-          <div class="award-text">Ranked #1 across all revenue &amp; conversion metrics company-wide</div>
+          <div class="award-header">#1 Company-Wide</div>
+          <div class="award-text">Ranked #1 across all revenue &amp; conversion metrics</div>
         </div>
         <div class="award-tile">
           <div class="award-icon">↑</div>
           <div class="award-label">Promoted</div>
-          <div class="award-text">Elevated to Team Lead in recognition of performance and leadership impact</div>
+          <div class="award-header">Elevated to Team Lead</div>
+          <div class="award-text">In recognition of performance and leadership impact</div>
         </div>
       </div>
     </div>
@@ -717,12 +829,24 @@
         </div>
         <div class="exp-date">Aug 2024 – June 2025</div>
       </div>
-      <p class="exp-desc">End-to-end ownership of the client journey, from portfolio strategy and investment structuring through to contract exchange and long-term retention.</p>
+      <p class="exp-desc">Full end-to-end ownership of the client journey at a premium property investment firm. Covered everything from discovery and portfolio strategy through to investment structuring, contract exchange and long-term retention. Finished tenure ranked among top individual contributors.</p>
       <div class="exp-hits">
         <div class="exp-hit">Consistently achieved <strong>5+ sales/month</strong>, converting strategy calls into signed $16,500 service agreements</div>
-        <div class="exp-hit">Re-engaged existing clients, bringing <strong>10+ investors back for second properties</strong> within months</div>
+        <div class="exp-hit">Re-engaged existing clients, bringing <strong>10+ investors back for second properties</strong> within months, driven by trust and genuine relationship depth</div>
         <div class="exp-hit">Delivered consultations across complex structures including trusts, SMSFs, and co-living builds</div>
-        <div class="exp-hit">Contributed to refining discovery frameworks that improved team-wide conversion quality</div>
+        <div class="exp-hit">Developed deep fluency in investment strategy and serviceability, advising confidently across varied buyer profiles and risk appetites</div>
+        <div class="exp-hit">Maintained high post-sale engagement, generating consistent referrals from a growing personal client base</div>
+        <div class="exp-hit">Contributed to refining discovery frameworks that improved team-wide conversion quality and consistency</div>
+      </div>
+      <div class="skills-honed">
+        <div class="sh-label">Skills Honed</div>
+        <div class="sh-tags">
+          <span class="sh-tag"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> High-Ticket Consultative Selling</span>
+          <span class="sh-tag"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Investment Structure Advising</span>
+          <span class="sh-tag"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Trust &amp; SMSF Strategy</span>
+          <span class="sh-tag"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Client Lifecycle Management</span>
+          <span class="sh-tag"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Pipeline Conversion</span>
+        </div>
       </div>
     </div>
 
@@ -734,11 +858,24 @@
         </div>
         <div class="exp-date">2019 – 2024</div>
       </div>
-      <p class="exp-desc">Built and scaled a high-profit online coaching business from scratch, managing sales, marketing, client delivery and operations entirely independently.</p>
+      <p class="exp-desc">Built, scaled and operated a high-performing online coaching business as sole founder for five years. Responsible for every function from lead generation and sales through to client delivery and financial management. Developed sharp commercial instincts through direct-to-consumer selling at scale.</p>
       <div class="exp-hits">
-        <div class="exp-hit">Scaled to <strong>multiple six figures within the first two years</strong> through targeted marketing and personalised programs</div>
-        <div class="exp-hit">Delivered consistent <strong>five-figure monthly revenue</strong> with high client satisfaction and retention</div>
+        <div class="exp-hit">Scaled to <strong>multiple six figures within the first two years</strong> through targeted digital marketing and personalised programs</div>
+        <div class="exp-hit">Delivered consistent <strong>five-figure monthly revenue</strong> with high client satisfaction and long-term retention</div>
+        <div class="exp-hit">Built a complete client acquisition funnel from cold audience to paid program, entirely independently</div>
+        <div class="exp-hit">Developed persuasive communication and sales conviction, selling high-value transformation without relying on pressure tactics</div>
         <div class="exp-hit">Managed all business functions: financial planning, onboarding, service delivery, and growth strategy</div>
+        <div class="exp-hit">Demonstrated five years of resilience, self-direction and commercial accountability as a solo operator</div>
+      </div>
+      <div class="skills-honed">
+        <div class="sh-label">Skills Honed</div>
+        <div class="sh-tags">
+          <span class="sh-tag"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Revenue Generation</span>
+          <span class="sh-tag"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Direct-to-Consumer Sales</span>
+          <span class="sh-tag"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Digital Marketing &amp; Funnels</span>
+          <span class="sh-tag"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Business Operations</span>
+          <span class="sh-tag"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Client Retention</span>
+        </div>
       </div>
     </div>
 
@@ -837,7 +974,7 @@
       <div class="cred-ic">◈</div>
       <div>
         <div class="cred-title">Active Property Investor</div>
-        <div class="cred-sub">3 investment properties acquired personally, bringing lived investor conviction to every client conversation</div>
+        <div class="cred-sub">5 investment properties acquired personally, bringing lived investor conviction to every client conversation</div>
       </div>
     </div>
   </div>
