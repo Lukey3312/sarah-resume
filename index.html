@@ -168,6 +168,16 @@
       width: 7px; height: 7px; border-radius: 50%;
       background: var(--p500);
     }
+    .dot-sep {
+      color: var(--p400); font-size: 1rem;
+      margin: 0 .25rem; line-height: 1;
+    }
+    .h-sub {
+      font-size: clamp(.85rem,1.4vw,1rem);
+      font-weight: 500; color: var(--p600);
+      letter-spacing: .01em; margin-bottom: 1rem;
+      opacity: 0; animation: fadeUp .8s ease .38s forwards;
+    }
     .h-name {
       font-family: 'Plus Jakarta Sans', sans-serif;
       font-size: clamp(3rem, 9vw, 7.5rem);
@@ -355,7 +365,7 @@
     }
     .exp-hit::before {
       content: '';
-      flex-shrink: 0; margin-top: .55rem;
+      flex-shrink: 0; margin-top: .58rem;
       width: 6px; height: 6px; border-radius: 50%;
       background: var(--p400);
     }
@@ -521,13 +531,14 @@
 
 <!-- HERO -->
 <header class="hero">
-  <div class="h-badge"><span class="dot"></span> Senior Strategic Advisor · Property Investment Specialist</div>
+  <div class="h-badge"><span class="dot"></span> Senior Strategic Advisor <span class="dot-sep">●</span> Team Lead</div>
   <h1 class="h-name">Sarah<br><em>Boyle.</em></h1>
-  <p class="h-tagline">High-ticket consultative sales, client advisory and portfolio strategy — built on real performance, real conviction, and real results.</p>
+  <p class="h-sub">Team Lead, Dashdot &nbsp;·&nbsp; Property Investment Specialist</p>
+  <p class="h-tagline">High-ticket consultative sales, client advisory and portfolio strategy. Built on real performance, real conviction, and real results.</p>
   <div class="h-contacts">
     <a class="h-contact" href="tel:0478063525"><span class="ic">◉</span> 0478 063 525</a>
     <a class="h-contact" href="mailto:sasullivan03@outlook.com"><span class="ic">◉</span> sasullivan03@outlook.com</a>
-    <span class="h-contact"><span class="ic">◉</span> Golden Bay, WA</span>
+    <a class="h-contact" href="https://maps.google.com/?q=Golden+Bay+Western+Australia" target="_blank" rel="noopener"><span class="ic">◉</span> Golden Bay, WA</a>
   </div>
   <div class="h-scroll"><span>Scroll</span><div class="scroll-line"></div></div>
 </header>
@@ -563,8 +574,8 @@
     <p class="s-label rev">Why Sarah</p>
     <h2 class="s-title rev" style="margin-bottom:2rem">The difference is conviction.</h2>
     <div class="m-lines">
-      <p class="m-line rev"><strong>40%+ close rate</strong> on packages up to $64K — not luck, method.</p>
-      <p class="m-line rev" style="transition-delay:.1s">I don't just advise clients on building wealth — <strong>I'm actively building my own.</strong></p>
+      <p class="m-line rev"><strong>40%+ close rate</strong> on packages up to $64K. Not luck, method.</p>
+      <p class="m-line rev" style="transition-delay:.1s">I don't just advise clients on building wealth. <strong>I'm actively building my own.</strong></p>
       <p class="m-line rev" style="transition-delay:.2s">Performance records don't get broken by accident. <strong>They get broken by intention.</strong></p>
       <p class="m-line rev" style="transition-delay:.3s">I thrive where <strong>expectations are high, standards are clear, and results are rewarded.</strong></p>
     </div>
@@ -585,12 +596,12 @@
         </div>
         <div class="exp-date">June 2025 – Present</div>
       </div>
-      <p class="exp-desc">Team leader and senior strategy advisor in a high-performance buyers agency — owning discovery and strategy calls, driving pipeline conversion, and elevating the broader advisor team.</p>
+      <p class="exp-desc">Team leader and senior strategy advisor in a high-performance buyers agency, owning discovery and strategy calls, driving pipeline conversion, and elevating the broader advisor team.</p>
       <div class="exp-hits">
         <div class="exp-hit">Consistently exceeded KPI with a <strong>40%+ monthly close rate</strong> on high-ticket advisory packages ($21K–$64K)</div>
         <div class="exp-hit">Ranked <strong>top performer</strong> across multiple revenue and conversion metrics company-wide</div>
         <div class="exp-hit">Holds company records: most strategy sessions in a month, most new clients in a quarter, most properties sold in a week, and <strong>highest weekly, monthly &amp; quarterly revenue</strong></div>
-        <div class="exp-hit">Promoted to Senior Strategic Advisor (Team Lead) — recognition of consistent high performance and leadership</div>
+        <div class="exp-hit">Promoted to Senior Strategic Advisor (Team Lead), recognition of consistent high performance and leadership</div>
         <div class="exp-hit">Mentors and develops the broader advisor team, driving team-wide conversion improvements</div>
       </div>
     </div>
@@ -603,7 +614,7 @@
         </div>
         <div class="exp-date">Aug 2024 – June 2025</div>
       </div>
-      <p class="exp-desc">End-to-end ownership of the client journey — from portfolio strategy and investment structuring through to contract exchange and long-term retention.</p>
+      <p class="exp-desc">End-to-end ownership of the client journey, from portfolio strategy and investment structuring through to contract exchange and long-term retention.</p>
       <div class="exp-hits">
         <div class="exp-hit">Consistently achieved <strong>5+ sales/month</strong>, converting strategy calls into signed $16,500 service agreements</div>
         <div class="exp-hit">Re-engaged existing clients, bringing <strong>10+ investors back for second properties</strong> within months</div>
@@ -616,11 +627,11 @@
       <div class="exp-head">
         <div>
           <div class="exp-role">Founder · Business Coach</div>
-          <div><span class="exp-co">Self-Employed — Health &amp; Fitness</span></div>
+          <div><span class="exp-co">Self-Employed, Health &amp; Fitness</span></div>
         </div>
         <div class="exp-date">2019 – 2024</div>
       </div>
-      <p class="exp-desc">Built and scaled a high-profit online coaching business from scratch — managing sales, marketing, client delivery and operations entirely independently.</p>
+      <p class="exp-desc">Built and scaled a high-profit online coaching business from scratch, managing sales, marketing, client delivery and operations entirely independently.</p>
       <div class="exp-hits">
         <div class="exp-hit">Scaled to <strong>multiple six figures within the first two years</strong> through targeted marketing and personalised programs</div>
         <div class="exp-hit">Delivered consistent <strong>five-figure monthly revenue</strong> with high client satisfaction and retention</div>
@@ -641,7 +652,7 @@
       <div class="skill">Discovery &amp; Strategy Session Facilitation</div>
       <div class="skill">Objection Handling &amp; Conversion at Scale</div>
       <div class="skill">Client Relationship Management &amp; Retention</div>
-      <div class="skill">CRM — Go High Level, Active Campaign</div>
+      <div class="skill">CRM: Go High Level, Active Campaign</div>
       <div class="skill">Property Investment Structures (Trust / SMSF)</div>
       <div class="skill">Pipeline Management &amp; Forecasting</div>
       <div class="skill">Revenue Generation &amp; KPI Overachievement</div>
@@ -669,7 +680,7 @@
       </div>
       <div class="testi-slide">
         <div class="testi-q-mark">"</div>
-        <p class="testi-q">I've worked with a lot of advisors and Sarah is in a different league. She doesn't just pitch — she listens, maps out a genuine strategy, and makes you feel confident at every step.</p>
+        <p class="testi-q">I've worked with a lot of advisors and Sarah is in a different league. She doesn't just pitch. She listens, maps out a genuine strategy, and makes you feel confident at every step.</p>
         <div class="testi-author">
           <div class="testi-av">RP</div>
           <div><div class="testi-name">R. Patel</div><div class="testi-role">Property Investor, VIC</div></div>
@@ -677,7 +688,7 @@
       </div>
       <div class="testi-slide">
         <div class="testi-q-mark">"</div>
-        <p class="testi-q">What sets Sarah apart is that she owns property herself — she brings genuine conviction to every conversation. I came back for my second investment within six months.</p>
+        <p class="testi-q">What sets Sarah apart is that she owns property herself. She brings genuine conviction to every conversation. I came back for my second investment within six months.</p>
         <div class="testi-author">
           <div class="testi-av">CL</div>
           <div><div class="testi-name">C. Lawson</div><div class="testi-role">Repeat Client, QLD</div></div>
@@ -689,7 +700,7 @@
       <button class="t-dot" data-i="1"></button>
       <button class="t-dot" data-i="2"></button>
     </div>
-    <p class="testi-note">* Placeholder testimonials — replace with real client quotes before publishing.</p>
+    <p class="testi-note">* Placeholder testimonials. Replace with real client quotes before publishing.</p>
   </div>
 </div>
 
@@ -702,28 +713,28 @@
       <div class="cred-ic">◈</div>
       <div>
         <div class="cred-title">NEPQ Sales Methodology</div>
-        <div class="cred-sub">Advanced consultative selling — deep discovery, objection neutralisation, high-ticket closing at scale</div>
+        <div class="cred-sub">Advanced consultative selling: deep discovery, objection neutralisation, high-ticket closing at scale</div>
       </div>
     </div>
     <div class="cred-item rev">
       <div class="cred-ic">◈</div>
       <div>
         <div class="cred-title">Property Investment Strategy</div>
-        <div class="cred-sub">Trust structures, SMSF, co-living, serviceability — advising investors across complex multi-property portfolios</div>
+        <div class="cred-sub">Trust structures, SMSF, co-living, serviceability, advising investors across complex multi-property portfolios</div>
       </div>
     </div>
     <div class="cred-item rev">
       <div class="cred-ic">◈</div>
       <div>
         <div class="cred-title">CRM &amp; Pipeline Operations</div>
-        <div class="cred-sub">Go High Level, Active Campaign — end-to-end pipeline visibility, task management, and conversion tracking</div>
+        <div class="cred-sub">Go High Level, Active Campaign: end-to-end pipeline visibility, task management, and conversion tracking</div>
       </div>
     </div>
     <div class="cred-item rev">
       <div class="cred-ic">◈</div>
       <div>
         <div class="cred-title">Active Property Investor</div>
-        <div class="cred-sub">3 investment properties acquired personally — brings lived investor conviction to every client conversation</div>
+        <div class="cred-sub">3 investment properties acquired personally, bringing lived investor conviction to every client conversation</div>
       </div>
     </div>
   </div>
