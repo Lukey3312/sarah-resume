@@ -316,7 +316,7 @@
       border: 1px solid #e5e7eb;
       box-shadow: 0 1px 8px rgba(0,0,0,.04);
       transition: border-color .25s, box-shadow .25s, transform .25s;
-      position: relative; overflow: hidden;
+      position: relative; overflow: visible;
     }
     .exp-card::before {
       content: '';
@@ -447,10 +447,10 @@
     .rtog-chevron { flex-shrink: 0; color: var(--p400); transition: transform .3s ease; }
     .rev-toggle[aria-expanded="true"] .rtog-chevron { transform: rotate(180deg); }
     .rev-panel {
-      overflow: hidden; max-height: 0; opacity: 0;
+      overflow: visible; max-height: 0; opacity: 0; pointer-events: none;
       transition: max-height .45s cubic-bezier(.4,0,.2,1), opacity .3s ease;
     }
-    .rev-panel.open { max-height: 220px; opacity: 1; }
+    .rev-panel.open { max-height: 350px; opacity: 1; pointer-events: auto; }
 
     /* SKILLS HONED */
     .skills-honed { margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid var(--p100); }
@@ -501,13 +501,14 @@
       color: #78540a; line-height: 1.4;
     }
     .exp-stat-bar {
-      display: flex; align-items: center; gap: 1.25rem;
+      display: flex; align-items: center;
       background: linear-gradient(135deg, var(--p800), var(--p600));
       border-radius: 10px; padding: 1rem 1.5rem;
       margin-top: 1rem; flex-wrap: nowrap; overflow-x: auto;
     }
     .exp-stat {
       display: flex; flex-direction: column; gap: .15rem;
+      flex: 1; align-items: center; text-align: center;
     }
     .exp-stat-num {
       font-size: 1.5rem; font-weight: 800;
