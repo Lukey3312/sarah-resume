@@ -1161,16 +1161,7 @@
 <script>
   // COVER LETTER MODAL
   function copyEmail(e){
-    const email = 'sasullivan03@outlook.com';
-    const label = document.getElementById('emailLabel');
-    if(navigator.clipboard && navigator.clipboard.writeText){
-      navigator.clipboard.writeText(email).then(()=>{
-        label.textContent = 'Copied!';
-        setTimeout(()=>{ label.textContent = email; }, 1800);
-      }).catch(()=>{ window.location.href = 'mailto:' + email; });
-    } else {
-      window.location.href = 'mailto:' + email;
-    }
+    window.location.href = 'mailto:sasullivan03@outlook.com';
     e.preventDefault();
   }
 
