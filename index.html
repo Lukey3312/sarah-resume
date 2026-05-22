@@ -778,7 +778,7 @@
   <p class="h-tagline">I've been obsessed with property since I bought my first investment. The strategy, the compounding, the long game. That obsession is what's driven me to keep growing in sales, because the better I get at this, the more people I can actually help get there.</p>
   <div class="h-contacts">
     <a class="h-contact" href="tel:0478063525"><span class="ic">◉</span> 0478 063 525</a>
-    <a class="h-contact" id="emailBtn" href="mailto:sasullivan03@outlook.com" onclick="copyEmail(event)"><span class="ic">◉</span> <span id="emailLabel">sasullivan03@outlook.com</span></a>
+    <a class="h-contact" href="mailto:sasullivan03@outlook.com"><span class="ic">◉</span> sasullivan03@outlook.com</a>
     <a class="h-contact" href="https://maps.google.com/?q=Golden+Bay+Western+Australia" target="_blank" rel="noopener"><span class="ic">◉</span> Golden Bay, WA</a>
   </div>
   <div class="h-scroll"><span>Scroll</span><div class="scroll-line"></div></div>
@@ -1160,12 +1160,7 @@
 
 <script>
   // COVER LETTER MODAL
-  function copyEmail(e){
-    window.location.href = 'mailto:sasullivan03@outlook.com';
-    e.preventDefault();
-  }
-
-  function openCoverLetter(){
+function openCoverLetter(){
     const o=document.getElementById('clOverlay');
     o.classList.add('open');
     document.body.style.overflow='hidden';
