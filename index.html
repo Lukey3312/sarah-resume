@@ -703,7 +703,7 @@
       transition: background .2s, border-color .2s;
     }
     .testi-tile:hover { background: rgba(255,255,255,.14); border-color: rgba(196,181,253,.3); }
-    .tt-q-mark { font-size: 2.5rem; line-height: .8; color: var(--p400); margin-bottom: .6rem; }
+    .tt-q-mark { font-size: 3.8rem; line-height: .7; color: var(--p400); margin-bottom: .5rem; font-family: Georgia, serif; }
     .tt-q { font-size: .862rem; line-height: 1.72; color: rgba(255,255,255,.88); flex: 1; margin-bottom: 1rem; }
     .tt-divider { height: 1px; background: rgba(196,181,253,.15); margin-bottom: 1rem; }
     .tt-author { display: flex; align-items: center; gap: .7rem; margin-bottom: .75rem; }
@@ -777,7 +777,7 @@
   <p class="h-tagline">I've been obsessed with property since I bought my first investment. The strategy, the compounding, the long game. That obsession is what's driven me to keep growing in sales, because the better I get at this, the more people I can actually help get there.</p>
   <div class="h-contacts">
     <a class="h-contact" href="tel:0478063525"><span class="ic">◉</span> 0478 063 525</a>
-    <a class="h-contact" href="mailto:sasullivan03@outlook.com"><span class="ic">◉</span> sasullivan03@outlook.com</a>
+    <a class="h-contact" id="emailBtn" href="mailto:sasullivan03@outlook.com" onclick="copyEmail(event)"><span class="ic">◉</span> <span id="emailLabel">sasullivan03@outlook.com</span></a>
     <a class="h-contact" href="https://maps.google.com/?q=Golden+Bay+Western+Australia" target="_blank" rel="noopener"><span class="ic">◉</span> Golden Bay, WA</a>
   </div>
   <div class="h-scroll"><span>Scroll</span><div class="scroll-line"></div></div>
@@ -1044,31 +1044,31 @@
     <h2 class="s-title rev">What People Say About Me</h2>
     <div class="testi-grid rev">
       <div class="testi-tile">
-        <div class="tt-q-mark">"</div>
+        <div class="tt-q-mark">&#x201C;</div>
         <p class="tt-q">Sarah is one of the sharpest salespeople I've worked alongside. She has this rare ability to genuinely connect with clients while still driving results. Her numbers spoke for themselves but what stood out more was the trust she built. Clients came back and referred others specifically because of her.</p>
         <div class="tt-divider"></div>
         <div class="tt-author">
           <div class="tt-av">SK</div>
-          <div><div class="tt-name">Sam Kristikakis</div><div class="tt-role">Sales Operations Manager, NSW</div></div>
+          <div><div class="tt-name">Sam Kristikakis</div><div class="tt-role">Sales Operations Manager, Dashdot, NSW</div></div>
         </div>
         <div class="tt-contact">
           <a href="tel:0410637788"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.65 3.35 2 2 0 0 1 3.62 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.72 16z"/></svg> 0410 637 788</a>
         </div>
       </div>
       <div class="testi-tile">
-        <div class="tt-q-mark">"</div>
-        <p class="tt-q">I managed Sarah directly and I can honestly say she is one of the most driven people I've had in a team. She didn't need to be pushed, she pushed herself. Her understanding of the property market was well beyond what you'd expect at her level, and her clients always felt genuinely looked after.</p>
+        <div class="tt-q-mark">&#x201C;</div>
+        <p class="tt-q">I managed Sarah directly and I can honestly say she is one of the most driven people I've had in a team. She didn't need to be pushed, she pushed herself. She came in with serious property knowledge and understood investment strategy in a way most salespeople simply don't. Her clients always felt like they were in expert hands, and the results reflected that.</p>
         <div class="tt-divider"></div>
         <div class="tt-author">
           <div class="tt-av">RM</div>
-          <div><div class="tt-name">Rheanna Morrison</div><div class="tt-role">Direct Manager, NSW</div></div>
+          <div><div class="tt-name">Rheanna Morrison</div><div class="tt-role">Direct Manager, Dashdot, NSW</div></div>
         </div>
         <div class="tt-contact">
           <a href="tel:0423096858"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.65 3.35 2 2 0 0 1 3.62 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.72 16z"/></svg> 0423 096 858</a>
         </div>
       </div>
       <div class="testi-tile">
-        <div class="tt-q-mark">"</div>
+        <div class="tt-q-mark">&#x201C;</div>
         <p class="tt-q">I've dealt with a few property advisors over the years and Sarah is genuinely different. She took the time to actually understand what I was trying to build, not just make a sale. The first property she helped me secure has performed better than I expected. I'd recommend her to anyone without hesitation.</p>
         <div class="tt-divider"></div>
         <div class="tt-author">
@@ -1159,6 +1159,20 @@
 
 <script>
   // COVER LETTER MODAL
+  function copyEmail(e){
+    const email = 'sasullivan03@outlook.com';
+    const label = document.getElementById('emailLabel');
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(email).then(()=>{
+        label.textContent = 'Copied!';
+        setTimeout(()=>{ label.textContent = email; }, 1800);
+      }).catch(()=>{ window.location.href = 'mailto:' + email; });
+    } else {
+      window.location.href = 'mailto:' + email;
+    }
+    e.preventDefault();
+  }
+
   function openCoverLetter(){
     const o=document.getElementById('clOverlay');
     o.classList.add('open');
