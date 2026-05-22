@@ -560,10 +560,6 @@
       .exp-stat {
         padding: .75rem .5rem;
       }
-      .exp-stat:nth-child(1),
-      .exp-stat:nth-child(3) { border-right: 1px solid rgba(255,255,255,.18); }
-      .exp-stat:nth-child(1),
-      .exp-stat:nth-child(2) { border-bottom: 1px solid rgba(255,255,255,.18); }
       .exp-stat-num { font-size: 1.25rem; }
 
       /* Revenue toggle: tighten layout */
@@ -572,8 +568,9 @@
       .rtog-sub { font-size: .62rem; }
 
       /* Chart: more height for annotation + bars */
-      .rev-panel.open { max-height: 480px; }
-      .rev-bars { gap: .2rem; }
+      .rev-panel.open { max-height: 520px; }
+      .rev-bars { gap: .2rem; padding-top: 110px; }
+      .rev-chart-title { margin-bottom: 2.5rem; }
       .rev-bar-month { font-size: .5rem; }
       .rev-bar-amt { font-size: .5rem; }
 
