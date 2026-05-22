@@ -109,20 +109,30 @@
       transform: translateY(-1px);
       box-shadow: 0 4px 20px rgba(124,58,237,.4);
     }
-    .mob-btn {
+    .mob-btns {
       display: none;
       position: fixed; bottom: 1.5rem; right: 1.5rem;
+      flex-direction: row; gap: .6rem;
+      z-index: 500;
+    }
+    .mob-btn {
       background: var(--p600); color: white;
-      border: none; padding: .8rem 1.5rem;
+      border: none; padding: .75rem 1.25rem;
       border-radius: 50px;
       font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: .82rem; font-weight: 700;
-      cursor: pointer; z-index: 500;
+      font-size: .78rem; font-weight: 700;
+      cursor: pointer;
       box-shadow: 0 4px 24px rgba(124,58,237,.45);
+      white-space: nowrap;
+    }
+    .mob-btn-cl {
+      background: white; color: var(--p700);
+      border: 1.5px solid var(--p300);
+      box-shadow: 0 4px 16px rgba(124,58,237,.2);
     }
     @media (max-width:768px) {
       nav .nav-links { display: none; }
-      .mob-btn { display: block; }
+      .mob-btns { display: flex; }
       nav { padding: .9rem 1.5rem; }
     }
 
@@ -158,12 +168,14 @@
 
     .h-badge {
       display: inline-flex; align-items: center; gap: .5rem;
+      flex-wrap: wrap;
       background: var(--p100); color: var(--p700);
       font-size: .75rem; font-weight: 600;
       padding: .4rem 1rem; border-radius: 50px;
       margin-bottom: 2rem; align-self: flex-start;
       opacity: 0; animation: fadeUp .7s ease .1s forwards;
     }
+    .badge-item { white-space: nowrap; display: inline-flex; align-items: center; gap: .35rem; }
     .h-badge .dot {
       width: 7px; height: 7px; border-radius: 50%;
       background: var(--p700);
@@ -718,7 +730,7 @@
 
     /* PRINT */
     @media print {
-      .cur-dot, .cur-ring, #prog, nav, .mob-btn, .h-scroll, .testi-bg { display: none !important; }
+      .cur-dot, .cur-ring, #prog, nav, .mob-btns, .h-scroll, .testi-bg { display: none !important; }
       body { background: #fff !important; color: #0f0a1e !important; cursor: auto; font-size: 9.5pt; }
       :root { --p600: #6d28d9; --p700: #5b21b6; }
       .hero { min-height: auto !important; padding: 1.5rem 2rem 1rem !important; break-after: avoid; }
@@ -764,11 +776,14 @@
   </div>
 </nav>
 
-<button class="mob-btn" onclick="window.print()">Download PDF</button>
+<div class="mob-btns">
+  <button class="mob-btn mob-btn-cl" onclick="openCoverLetter()">Cover Letter</button>
+  <button class="mob-btn mob-btn-pdf" onclick="window.print()">Download PDF</button>
+</div>
 
 <!-- HERO -->
 <header class="hero">
-  <div class="h-badge"><span class="dot"></span> Senior Strategic Advisor <span class="dot-sep"></span> Team Lead <span class="dot-sep"></span> Property Investment Specialist</div>
+  <div class="h-badge"><span class="badge-item"><span class="dot"></span> Senior Strategic Advisor</span><span class="dot-sep"></span><span class="badge-item">Team Lead</span><span class="dot-sep"></span><span class="badge-item">Property Investment Specialist</span></div>
   <div class="h-name-row">
     <h1 class="h-name">Sarah<br><em>Boyle.</em></h1>
     <div class="hero-photo">
