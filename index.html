@@ -176,6 +176,11 @@
       opacity: 0; animation: fadeUp .7s ease .1s forwards;
     }
     .badge-item { white-space: nowrap; display: inline-flex; align-items: center; gap: .35rem; }
+    @media (max-width: 768px) {
+      .h-badge { flex-direction: column; align-items: flex-start; border-radius: 14px; gap: .4rem; }
+      .dot-sep { display: none; }
+      .badge-item { white-space: nowrap; }
+    }
     .h-badge .dot {
       width: 7px; height: 7px; border-radius: 50%;
       background: var(--p700);
